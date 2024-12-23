@@ -10,14 +10,14 @@ import (
 )
 
 type PaymentRequest struct {
-	PhoneNumber      string  `json:"phone_number" binding:"required"`
-	Amount           float64 `json:"amount" binding:"required"`
-	Token            string  `json:"token" binding:"required"`
-	ImpalamerchantID string  `json:"impalamerchantid" binding:"required"`
+	PhoneNumber string  `json:"phone_number" binding:"required"`
+	Amount      float64 `json:"amount" binding:"required"`
 }
 
 type BulkPaymentRequest struct {
-	Payments []PaymentRequest `json:"payments" binding:"required,dive"`
+	Token            string           `json:"token" binding:"required"`
+	ImpalamerchantID string           `json:"impalamerchantid" binding:"required"`
+	Payments         []PaymentRequest `json:"payments" binding:"required,dive"`
 }
 
 type Payment struct {
@@ -104,5 +104,5 @@ func main() {
 	r := gin.Default()
 	r.POST("/bulk-payments", bulkPaymentHandler)
 
-	r.Run(":8080")
+	r.Run(":8097")
 }
