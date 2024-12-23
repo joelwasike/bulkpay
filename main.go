@@ -10,8 +10,10 @@ import (
 )
 
 type PaymentRequest struct {
-	PhoneNumber string  `json:"phone_number" binding:"required"`
-	Amount      float64 `json:"amount" binding:"required"`
+	PhoneNumber      string  `json:"phone_number" binding:"required"`
+	Amount           float64 `json:"amount" binding:"required"`
+	Token            string  `json:"token" binding:"required"`
+	ImpalamerchantID string  `json:"impalamerchantid" binding:"required"`
 }
 
 type BulkPaymentRequest struct {
