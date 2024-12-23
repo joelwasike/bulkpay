@@ -29,7 +29,7 @@ var db *gorm.DB
 
 func initDB() {
 	var err error
-	dsn := "joelwasike:@Webuye2021@tcp(localhost:3306)/bulkpayments?charset=utf8mb4&parseTime=True&loc=Local"
+	dsn := "mamlakadev:@Mamlaka2021@tcp(localhost:3306)/bulkpayments?charset=utf8mb4&parseTime=True&loc=Local"
 	db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect to database")
